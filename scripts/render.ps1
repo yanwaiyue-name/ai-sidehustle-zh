@@ -73,6 +73,7 @@ foreach ($p in $projects) {
 </style>
 </head>
 <body>
+<script src="https://yanwaiyue-name.github.io/yuese-nav/nav.js" data-site="ai-sidehustle-zh" data-theme="auto" data-max="860" defer></script>
 <main>
   <a class="back" href="../index.html">← 返回清单</a>
   <h1>$(Html-Escape $p.title)</h1>
@@ -166,6 +167,7 @@ $html = @"
 </style>
 </head>
 <body>
+<script src="https://yanwaiyue-name.github.io/yuese-nav/nav.js" data-site="ai-sidehustle-zh" data-theme="auto" data-max="860" defer></script>
   <h1>💰 中文 AI 副业实战导航</h1>
   <p class="sub">只列真实可执行的路子 · 每条标成本 / 收益 / 证据等级 / 出处</p>
   <div class="notice">
