@@ -12,7 +12,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/状态-维护中-blue)
-[![validate-pr](https://github.com/yanwaiyue-name/ai-sidehustle-zh/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/yanwaiyue-name/ai-sidehustle-zh/actions/workflows/validate-pr.yml)
+[![deploy-pages](https://github.com/yanwaiyue-name/ai-sidehustle-zh/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/yanwaiyue-name/ai-sidehustle-zh/actions/workflows/deploy-pages.yml)
 
 </div>
 
@@ -66,7 +66,7 @@
 | 你是 | 点这里 |
 | --- | --- |
 | 想直接看清单 | [docs/index.html](docs/index.html)（网页，支持搜索/分类/证据筛选） |
-| 想看单条详情 | [docs/projects/](docs/projects/) 下每项目一个 Markdown |
+| 想看单条详情 | [docs/projects/](docs/projects/) 下每项目一个 HTML 详情页 |
 | 想拿结构化数据 | [data/projects.json](data/projects.json) |
 
 ---

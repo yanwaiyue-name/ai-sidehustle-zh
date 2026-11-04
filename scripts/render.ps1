@@ -1,7 +1,7 @@
-<#
+﻿<#
 ai-sidehustle-zh 渲染：
   1. 从 data/projects.json 生成单文件 docs/index.html（搜索 / 分类 / 证据筛选）
-  2. 为每条副业生成 docs/projects/<id>.md 详情页，兑现 README 的入口
+  2. 为每条副业生成 docs/projects/<id>.html 详情页，兑现 README 的入口
 #>
 [CmdletBinding()]
 param([string]$DataPath, [string]$OutPath, [string]$DocsDir)
@@ -21,33 +21,80 @@ function Html-Escape($s) {
 
 New-Item -ItemType Directory -Force -Path $DocsDir | Out-Null
 
-# ---------- 单条详情页 ----------
+# ---------- 单条详情页（HTML） ----------
+# GitHub Pages 不会把 .md 当网页渲染，直接点开只会看到源码。
+# 所以详情页也生成 HTML，和总览页共用同一套样式。
+if (Test-Path -LiteralPath $DocsDir) {
+    Get-ChildItem -LiteralPath $DocsDir -File |
+        Where-Object { $_.Extension -in '.md', '.html' } |
+        Remove-Item -Force
+}
+
 foreach ($p in $projects) {
     $id = [string]$p.id
-    $src = if ($p.source_url) { "[来源 / 官方规则页]($(Html-Escape $p.source_url))" } else { '（暂无可点链接，见下方出处说明）' }
+    $ev = [string]$p.evidence
+    $srcHtml = if ($p.source_url) {
+        '<a href="' + (Html-Escape $p.source_url) + '" target="_blank" rel="noopener">来源 / 官方规则页 ↗</a>'
+    } else {
+        '（暂无可点链接，见下方出处说明）'
+    }
+    $notice = if ($ev -eq 'C') {
+        '<div class="notice">⚠️ 本条为 C 级：只有个案经验与平台公开挂单价，<b>没有权威统计数据</b>，收益数字不可当作保证。</div>'
+    } else { '' }
     $detail = @"
-# $(Html-Escape $p.title)
-
-> 分类：$(Html-Escape $p.category) ｜ 证据等级：**$([string]$p.evidence) 级**
-
-- **成本标签**：``$([string]$p.cost)``
-- **成本**：$(Html-Escape $p.cost_detail)
-- **说人话**：$(Html-Escape $p.plain)
-- **收益**：$(Html-Escape $p.income)
-- **为什么**：$(Html-Escape $p.why)
-- **证据等级**：$([string]$p.evidence)
-- **来源**：$(Html-Escape $p.source)
-- **链接**：$src
-- **常用工具**：$(@($p.tools) -join '、')
-- **备注 / 风险**：$(Html-Escape $p.note)
-
----
-
-[← 返回清单](../index.html) · 本页由 scripts/render.ps1 生成
-
-$(if ($p.evidence -eq 'C') { '> ⚠️ 本条为 C 级：只有个案经验与平台公开挂单价，**没有权威统计数据**，收益数字不可当作保证。' } else { '' })
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$(Html-Escape $p.title) · 中文 AI 副业实战导航</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; color:#1a1a1a; line-height:1.7; }
+  .back { display:inline-block; margin-bottom:1rem; font-size:.9rem; }
+  h1 { font-size:1.55rem; line-height:1.35; margin:.2rem 0 .6rem; }
+  .meta { color:#666; font-size:.9rem; }
+  .ev { font-weight:bold; padding:.1rem .45rem; border-radius:4px; }
+  .ev-A { background:#dafbe1; } .ev-B { background:#eef9ff; } .ev-C { background:#fff8c5; }
+  .notice { background:#fff8c5; border-left:4px solid #d4a72c; padding:.7rem 1rem; font-size:.9rem; margin:1.2rem 0; border-radius:4px; }
+  dl { margin:1.2rem 0; }
+  dt { font-weight:600; margin-top:1rem; }
+  dd { margin:.25rem 0 0; }
+  code { background:#f5f5f7; padding:.1rem .35rem; border-radius:4px; }
+  a { color:#0078d4; text-decoration:none; } a:hover { text-decoration:underline; }
+  footer { margin-top:2.5rem; padding-top:1rem; border-top:1px solid #eee; color:#999; font-size:.85rem; }
+  @media (prefers-color-scheme: dark) {
+    body { background:#0d1117; color:#e6edf3; }
+    .meta, footer { color:#8b949e; }
+    .notice { background:#3b2f0b; }
+    code { background:#161b22; }
+    footer { border-color:#30363d; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../index.html">← 返回清单</a>
+  <h1>$(Html-Escape $p.title)</h1>
+  <p class="meta">分类：$(Html-Escape $p.category) ｜ 证据等级：<span class="ev ev-$ev">$ev 级</span></p>
+  $notice
+  <dl>
+    <dt>成本标签</dt><dd><code>$(Html-Escape $p.cost)</code></dd>
+    <dt>成本</dt><dd>$(Html-Escape $p.cost_detail)</dd>
+    <dt>说人话</dt><dd>$(Html-Escape $p.plain)</dd>
+    <dt>收益</dt><dd>$(Html-Escape $p.income)</dd>
+    <dt>为什么</dt><dd>$(Html-Escape $p.why)</dd>
+    <dt>来源</dt><dd>$(Html-Escape $p.source)</dd>
+    <dt>来源链接</dt><dd>$srcHtml</dd>
+    <dt>常用工具</dt><dd>$(Html-Escape ((@($p.tools)) -join '、'))</dd>
+    <dt>备注 / 风险</dt><dd>$(Html-Escape $p.note)</dd>
+  </dl>
+  <footer>本页由 scripts/render.ps1 从 data/projects.json 生成 · 副业有风险，收入无保证</footer>
+</main>
+</body>
+</html>
 "@
-    [System.IO.File]::WriteAllText((Join-Path $DocsDir "$id.md"), $detail, (New-Object System.Text.UTF8Encoding($false)))
+    [System.IO.File]::WriteAllText((Join-Path $DocsDir "$id.html"), $detail, (New-Object System.Text.UTF8Encoding($false)))
 }
 
 # ---------- 总览页 ----------
@@ -58,12 +105,12 @@ foreach ($p in $projects) {
     $srcLink = if ($p.source_url) {
         '<a href="' + (Html-Escape $p.source_url) + '" target="_blank" rel="noopener" title="官方规则页 / 数据来源">来源 ↗</a>'
     } else { '—' }
-    $detailLink = '<a href="projects/' + (Html-Escape $p.id) + '.md">详情</a>'
+    $detailLink = '<a href="projects/' + (Html-Escape $p.id) + '.html">详情</a>'
     $hay = Html-Escape ((@($p.title, $p.plain, $p.category, $p.tools) -join ' ').ToLowerInvariant())
 
     $rows.Add(@"
     <tr data-cat="$cat" data-ev="$ev" data-hay="$hay">
-      <td><a href="projects/$(Html-Escape $p.id).md"><b>$(Html-Escape $p.title)</b></a><br><span class="cat">$cat</span><br><span class="meta">$detailLink · $srcLink</span></td>
+      <td><a href="projects/$(Html-Escape $p.id).html"><b>$(Html-Escape $p.title)</b></a><br><span class="cat">$cat</span><br><span class="meta">$detailLink · $srcLink</span></td>
       <td>$(Html-Escape $p.cost_detail)</td>
       <td>$(Html-Escape $p.income)</td>
       <td><span class="ev ev-$ev">$ev 级</span></td>
@@ -184,4 +231,4 @@ $(($rows -join "`n"))
 
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent $OutPath) | Out-Null
 [System.IO.File]::WriteAllText($OutPath, $html, (New-Object System.Text.UTF8Encoding($false)))
-Write-Host ("已生成：$OutPath （$($projects.Count) 条）+ $DocsDir 下 $($projects.Count) 个详情页")
+Write-Host ("已生成：$OutPath （$($projects.Count) 条）+ $DocsDir 下 $($projects.Count) 个 HTML 详情页")
