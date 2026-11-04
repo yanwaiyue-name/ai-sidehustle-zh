@@ -25,11 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 字段校验
+      - name: 数据校验 + 来源链接探测
         shell: pwsh
-        run: ./scripts/check_links.ps1
+        run: ./scripts/check_links.ps1 -ProbeLinks
 
-      - name: 重新渲染 docs/index.html
+      - name: 重新渲染网页与详情页
         shell: pwsh
         run: ./scripts/render.ps1
 

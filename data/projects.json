@@ -11,8 +11,14 @@
     "evidence": "C",
     "source": "平台官方分成规则（抖音中视频计划、视频号创作者分成计划）+ 普遍经验，无权威收益统计",
     "note": "需持续产出，单条爆款不可复制；违规搬运/洗稿会被限流。",
-    "tools": ["MoneyPrinterTurbo", "hypit", "剪映", "Suno"],
-    "status": "ok"
+    "tools": [
+      "MoneyPrinterTurbo",
+      "hypit",
+      "剪映",
+      "Suno"
+    ],
+    "status": "ok",
+    "source_url": "https://creator.douyin.com/creator-micro/content/upload"
   },
   {
     "id": "ai-thumbnail-design",
@@ -26,8 +32,13 @@
     "evidence": "C",
     "source": "闲鱼/猪八戒公开挂单价（个案），无权威统计",
     "note": "客单价低，纯体力活，难规模化；别碰侵权 IP 二创。",
-    "tools": ["Midjourney", "即梦", "稿定设计"],
-    "status": "ok"
+    "tools": [
+      "Midjourney",
+      "即梦",
+      "稿定设计"
+    ],
+    "status": "ok",
+    "source_url": "https://www.goofish.com/"
   },
   {
     "id": "ai-translation",
@@ -41,8 +52,13 @@
     "evidence": "C",
     "source": "翻译兼职平台公开报价（个案），无权威统计",
     "note": "专业领域（医疗/法律/金融）需真懂行，否则出责。",
-    "tools": ["DeepL", "Claude", "Gemini"],
-    "status": "ok"
+    "tools": [
+      "DeepL",
+      "Claude",
+      "Gemini"
+    ],
+    "status": "ok",
+    "source_url": "https://www.deepl.com/pro"
   },
   {
     "id": "ai-avatar-live",
@@ -56,8 +72,13 @@
     "evidence": "C",
     "source": "平台直播分成规则 + 普遍经验，无权威统计",
     "note": "平台对录播/无人播有合规限制，需看最新规则；转化靠选品。",
-    "tools": ["HeyGen", "硅基智能", "D-ID"],
-    "status": "ok"
+    "tools": [
+      "HeyGen",
+      "硅基智能",
+      "D-ID"
+    ],
+    "status": "ok",
+    "source_url": "https://school.jinritemai.com/doudian/web/"
   },
   {
     "id": "ai-cover-song",
@@ -71,8 +92,13 @@
     "evidence": "C",
     "source": "平台分成规则 + 经验，无权威统计",
     "note": "商用他人音色涉肖像/声音权风险；别碰未授权明星音色。",
-    "tools": ["OpenVoice", "VoxCPM", "So-VITS-SVC"],
-    "status": "ok"
+    "tools": [
+      "OpenVoice",
+      "VoxCPM",
+      "So-VITS-SVC"
+    ],
+    "status": "ok",
+    "source_url": "https://github.com/myshell-ai/OpenVoice"
   },
   {
     "id": "ai-illustration-pack",
@@ -86,10 +112,14 @@
     "evidence": "C",
     "source": "素材平台公开单价（个案），无权威统计",
     "note": "平台对 AI 生成内容有审核；注意版权与可商用性声明。",
-    "tools": ["Recraft", "Stable Diffusion", "Tripo"],
-    "status": "ok"
+    "tools": [
+      "Recraft",
+      "Stable Diffusion",
+      "Tripo"
+    ],
+    "status": "ok",
+    "source_url": "https://www.aigei.com/"
   },
-
   {
     "id": "n8n-automation",
     "category": "AI 工具/自动化接单",
@@ -102,8 +132,13 @@
     "evidence": "C",
     "source": "自由职业平台 n8n 相关挂单价（个案），无权威统计",
     "note": "要真懂业务流，不是套模板；涉及账号权限需签授权。",
-    "tools": ["n8n", "飞书多维表格", "Make"],
-    "status": "ok"
+    "tools": [
+      "n8n",
+      "飞书多维表格",
+      "Make"
+    ],
+    "status": "ok",
+    "source_url": "https://docs.n8n.io/"
   },
   {
     "id": "ai-chatbot-service",
@@ -117,8 +152,13 @@
     "evidence": "C",
     "source": "企业服务自由职业报价（个案），无权威统计",
     "note": "要会处理权限与数据安全，别把客户私密文档乱喂。",
-    "tools": ["Dify", "Coze", "LangChain"],
-    "status": "ok"
+    "tools": [
+      "Dify",
+      "Coze",
+      "LangChain"
+    ],
+    "status": "ok",
+    "source_url": "https://docs.dify.ai/"
   },
   {
     "id": "ai-ppt-service",
@@ -132,8 +172,13 @@
     "evidence": "C",
     "source": "闲鱼/淘宝公开挂单价（个案），无权威统计",
     "note": "别代写考试/论文正文（学术诚信风险）；只做排版与结构。",
-    "tools": ["ppt-master", "Gamma", "WPS AI"],
-    "status": "ok"
+    "tools": [
+      "ppt-master",
+      "Gamma",
+      "WPS AI"
+    ],
+    "status": "ok",
+    "source_url": "https://github.com/hugohe3/ppt-master"
   },
   {
     "id": "ai-resume",
@@ -147,8 +192,13 @@
     "evidence": "C",
     "source": "求职服务公开挂单价（个案），无权威统计",
     "note": "别代笔造假经历；帮改可以，编经历不行。",
-    "tools": ["magic-resume", "ChatGPT", "DeepSeek"],
-    "status": "ok"
+    "tools": [
+      "magic-resume",
+      "ChatGPT",
+      "DeepSeek"
+    ],
+    "status": "ok",
+    "source_url": "https://github.com/JOYCEQL/magic-resume"
   },
   {
     "id": "ai-agent-dev",
@@ -162,10 +212,14 @@
     "evidence": "C",
     "source": "自由职业平台挂单价（个案），无权威统计",
     "note": "别接违法/侵权/绕过授权的需求。",
-    "tools": ["Claude Code", "Codex", "OpenCode"],
-    "status": "ok"
+    "tools": [
+      "Claude Code",
+      "Codex",
+      "OpenCode"
+    ],
+    "status": "ok",
+    "source_url": "https://docs.anthropic.com/en/docs/claude-code/overview"
   },
-
   {
     "id": "prompt-templates",
     "category": "数字产品",
@@ -178,8 +232,13 @@
     "evidence": "C",
     "source": "提示词市场公开单价（个案），无权威统计",
     "note": "别卖侵权/违规内容；标注清楚适用模型版本。",
-    "tools": ["Claude skills", "PromptBase", "飞书文档"],
-    "status": "ok"
+    "tools": [
+      "Claude skills",
+      "PromptBase",
+      "飞书文档"
+    ],
+    "status": "ok",
+    "source_url": "https://github.com/anthropics/skills"
   },
   {
     "id": "ai-mini-course",
@@ -193,8 +252,13 @@
     "evidence": "C",
     "source": "知识付费平台公开定价（个案），无权威统计",
     "note": "别承诺「包赚」；内容要有真东西否则退款潮。",
-    "tools": ["小鹅通", "知识星球", "剪映"],
-    "status": "ok"
+    "tools": [
+      "小鹅通",
+      "知识星球",
+      "剪映"
+    ],
+    "status": "ok",
+    "source_url": "https://www.xiaoe-tech.com/"
   },
   {
     "id": "ai-ebook",
@@ -208,8 +272,13 @@
     "evidence": "C",
     "source": "电子书平台公开定价（个案），无权威统计",
     "note": "必须自己审校，AI 会编造；标注「AI 辅助」。",
-    "tools": ["Claude", "GitBook", "Typora"],
-    "status": "ok"
+    "tools": [
+      "Claude",
+      "GitBook",
+      "Typora"
+    ],
+    "status": "ok",
+    "source_url": "https://www.gitbook.com/"
   },
   {
     "id": "ai-notion-template",
@@ -223,10 +292,13 @@
     "evidence": "C",
     "source": "模板市场公开定价（个案），无权威统计",
     "note": "别卖盗版官方模板；标注清楚功能。",
-    "tools": ["Notion", "飞书多维表格"],
-    "status": "ok"
+    "tools": [
+      "Notion",
+      "飞书多维表格"
+    ],
+    "status": "ok",
+    "source_url": "https://www.notion.so/templates"
   },
-
   {
     "id": "data-cleaning",
     "category": "数据与爬虫服务",
@@ -239,8 +311,13 @@
     "evidence": "C",
     "source": "数据服务自由职业报价（个案），无权威统计",
     "note": "只采公开数据；别碰需登录的隐私数据、别违反 robots/服务条款。",
-    "tools": ["crawl4ai", "Scrapling", "MediaCrawler"],
-    "status": "ok"
+    "tools": [
+      "crawl4ai",
+      "Scrapling",
+      "MediaCrawler"
+    ],
+    "status": "ok",
+    "source_url": "https://docs.crawl4ai.com/"
   },
   {
     "id": "ai-dataset",
@@ -254,8 +331,13 @@
     "evidence": "C",
     "source": "数据集平台公开定价（个案），无权威统计",
     "note": "必须去重与人工校验，AI 生成数据噪声大；标注来源与许可。",
-    "tools": ["Hugging Face", "Dify", "Label Studio"],
-    "status": "ok"
+    "tools": [
+      "Hugging Face",
+      "Dify",
+      "Label Studio"
+    ],
+    "status": "ok",
+    "source_url": "https://huggingface.co/docs/datasets/index"
   },
   {
     "id": "osint-report",
@@ -269,10 +351,14 @@
     "evidence": "C",
     "source": "情报服务自由职业报价（个案），无权威统计",
     "note": "只做公开信息；别碰隐私、别越权、别伪造。",
-    "tools": ["SpiderFoot", "sherlock", "firecrawl"],
-    "status": "ok"
+    "tools": [
+      "SpiderFoot",
+      "sherlock",
+      "firecrawl"
+    ],
+    "status": "ok",
+    "source_url": "https://github.com/smicallef/spiderfoot"
   },
-
   {
     "id": "ai-consulting",
     "category": "AI 咨询/陪跑",
@@ -285,8 +371,13 @@
     "evidence": "C",
     "source": "企业咨询自由职业报价（个案），无权威统计",
     "note": "没真本事别接；落地失败伤口碑。半可逆：时间投入难收回。",
-    "tools": ["Dify", "Coze", "n8n"],
-    "status": "ok"
+    "tools": [
+      "Dify",
+      "Coze",
+      "n8n"
+    ],
+    "status": "ok",
+    "source_url": "https://docs.dify.ai/"
   },
   {
     "id": "ai-tutor",
@@ -300,7 +391,12 @@
     "evidence": "C",
     "source": "陪跑/家教公开报价（个案），无权威统计",
     "note": "从熟人圈起步最稳；别承诺结果。",
-    "tools": ["Claude", "豆包", "剪映"],
-    "status": "ok"
+    "tools": [
+      "Claude",
+      "豆包",
+      "剪映"
+    ],
+    "status": "ok",
+    "source_url": "https://www.doubao.com/"
   }
 ]

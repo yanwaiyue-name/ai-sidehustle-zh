@@ -16,11 +16,15 @@
   "why": "这条路背后的机制",
   "evidence": "A",            // A=有官方原文 / B=有统计报告 / C=只有个案经验
   "source": "机构 (年份). 文件名. <链接>",
+  "source_url": "https://官方规则页或数据来源",
   "note": "什么情况下不适用 / 风险",
   "tools": ["工具1", "工具2"],
   "status": "ok"
 }
 ```
+
+`source_url` 必填：指向平台官方分成规则、定价页或数据来源，供每周体检探测。
+`link_status` / `link_checked` 由脚本回写，不要手填。
 
 ## 红线
 
@@ -31,6 +35,9 @@
 ## 提交前
 
 ```powershell
-pwsh scripts/check_links.ps1        # 校验字段齐全
-pwsh scripts/render.ps1             # 重新生成 docs/index.html
+pwsh scripts/check_links.ps1        # 校验字段/枚举/去重（不联网）
+pwsh scripts/check_links.ps1 -ProbeLinks  # 可选：探测来源链接
+pwsh scripts/render.ps1             # 生成网页 + 每项目一个详情页
 ```
+
+改动 `data/` 的 PR 会自动跑 `validate-pr.yml`，格式不合格会被挡下。

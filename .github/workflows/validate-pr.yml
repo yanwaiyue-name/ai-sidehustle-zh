@@ -1,0 +1,32 @@
+name: validate-pr
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 校验数据文件
+        shell: pwsh
+        run: ./scripts/check_links.ps1
+
+      - name: 校验渲染脚本可运行（不写回仓库）
+        shell: pwsh
+        run: |
+          ./scripts/render.ps1 -OutPath $env:RUNNER_TEMP/index.html -DocsDir $env:RUNNER_TEMP/projects
+          if (-not (Test-Path $env:RUNNER_TEMP/index.html)) { throw '渲染未产出网页' }
+          $n = @(Get-ChildItem $env:RUNNER_TEMP/projects -Filter '*.md').Count
+          if ($n -lt 1) { throw '未生成详情页' }
+          Write-Host "渲染校验通过，详情页 $n 个"
