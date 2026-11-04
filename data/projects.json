@@ -18,7 +18,9 @@
       "Suno"
     ],
     "status": "ok",
-    "source_url": "https://creator.douyin.com/creator-micro/content/upload"
+    "source_url": "https://creator.douyin.com/creator-micro/content/upload",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-thumbnail-design",
@@ -38,7 +40,9 @@
       "稿定设计"
     ],
     "status": "ok",
-    "source_url": "https://www.goofish.com/"
+    "source_url": "https://www.goofish.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-translation",
@@ -58,7 +62,9 @@
       "Gemini"
     ],
     "status": "ok",
-    "source_url": "https://www.deepl.com/pro"
+    "source_url": "https://www.deepl.com/pro",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-avatar-live",
@@ -78,7 +84,9 @@
       "D-ID"
     ],
     "status": "ok",
-    "source_url": "https://school.jinritemai.com/doudian/web/"
+    "source_url": "https://school.jinritemai.com/doudian/web/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-cover-song",
@@ -98,7 +106,9 @@
       "So-VITS-SVC"
     ],
     "status": "ok",
-    "source_url": "https://github.com/myshell-ai/OpenVoice"
+    "source_url": "https://github.com/myshell-ai/OpenVoice",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-illustration-pack",
@@ -118,7 +128,9 @@
       "Tripo"
     ],
     "status": "ok",
-    "source_url": "https://www.aigei.com/"
+    "source_url": "https://www.aigei.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "n8n-automation",
@@ -138,7 +150,9 @@
       "Make"
     ],
     "status": "ok",
-    "source_url": "https://docs.n8n.io/"
+    "source_url": "https://docs.n8n.io/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-chatbot-service",
@@ -158,7 +172,9 @@
       "LangChain"
     ],
     "status": "ok",
-    "source_url": "https://docs.dify.ai/"
+    "source_url": "https://docs.dify.ai/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-ppt-service",
@@ -178,7 +194,9 @@
       "WPS AI"
     ],
     "status": "ok",
-    "source_url": "https://github.com/hugohe3/ppt-master"
+    "source_url": "https://github.com/hugohe3/ppt-master",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-resume",
@@ -198,7 +216,9 @@
       "DeepSeek"
     ],
     "status": "ok",
-    "source_url": "https://github.com/JOYCEQL/magic-resume"
+    "source_url": "https://github.com/JOYCEQL/magic-resume",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-agent-dev",
@@ -218,7 +238,9 @@
       "OpenCode"
     ],
     "status": "ok",
-    "source_url": "https://docs.anthropic.com/en/docs/claude-code/overview"
+    "source_url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "prompt-templates",
@@ -238,7 +260,9 @@
       "飞书文档"
     ],
     "status": "ok",
-    "source_url": "https://github.com/anthropics/skills"
+    "source_url": "https://github.com/anthropics/skills",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-mini-course",
@@ -258,7 +282,9 @@
       "剪映"
     ],
     "status": "ok",
-    "source_url": "https://www.xiaoe-tech.com/"
+    "source_url": "https://www.xiaoe-tech.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-ebook",
@@ -278,7 +304,9 @@
       "Typora"
     ],
     "status": "ok",
-    "source_url": "https://www.gitbook.com/"
+    "source_url": "https://www.gitbook.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-notion-template",
@@ -297,7 +325,9 @@
       "飞书多维表格"
     ],
     "status": "ok",
-    "source_url": "https://www.notion.so/templates"
+    "source_url": "https://www.notion.so/templates",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "data-cleaning",
@@ -317,7 +347,9 @@
       "MediaCrawler"
     ],
     "status": "ok",
-    "source_url": "https://docs.crawl4ai.com/"
+    "source_url": "https://docs.crawl4ai.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-dataset",
@@ -337,7 +369,9 @@
       "Label Studio"
     ],
     "status": "ok",
-    "source_url": "https://huggingface.co/docs/datasets/index"
+    "source_url": "https://huggingface.co/docs/datasets/index",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "osint-report",
@@ -357,7 +391,9 @@
       "firecrawl"
     ],
     "status": "ok",
-    "source_url": "https://github.com/smicallef/spiderfoot"
+    "source_url": "https://github.com/smicallef/spiderfoot",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-consulting",
@@ -377,7 +413,9 @@
       "n8n"
     ],
     "status": "ok",
-    "source_url": "https://docs.dify.ai/"
+    "source_url": "https://docs.dify.ai/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   },
   {
     "id": "ai-tutor",
@@ -397,6 +435,8 @@
       "剪映"
     ],
     "status": "ok",
-    "source_url": "https://www.doubao.com/"
+    "source_url": "https://www.doubao.com/",
+    "link_status": "ok",
+    "link_checked": "2026-11-04"
   }
 ]
